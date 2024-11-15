@@ -4,8 +4,11 @@ def is_prime(n):
     if n <= 1:
         isPrime = False
         return isPrime
-
-    for i in range(n - 1, 1, -1):
+# if a number has a factor larger than its square root, it must also have a corresponding factor smaller than the square root.
+#Thus, if N has a factor larger than its square root, it must have a corresponding factor smaller than the square root. 
+# This means we only need to check for factors up to the square root,
+#  because any factor larger than the square root will already have been accounted for by a smaller factor.
+    for i in range(2, int(n ** 0.5) + 1):
         if(n % i == 0):
             isPrime = False
             return isPrime
